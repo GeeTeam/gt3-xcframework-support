@@ -22,7 +22,7 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = "SDK/GT3Captcha.xcframework"
   spec.resources = "SDK/GT3Captcha.bundle"
 
-  spec.pod_target_xcconfig 	= { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
-  spec.user_target_xcconfig 	= { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES' }
+  spec.pod_target_xcconfig 	= { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  spec.user_target_xcconfig 	= { 'BUILD_LIBRARY_FOR_DISTRIBUTION' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
 
 end
