@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1C832CD72420A9AD002956C4 /* GT3Captcha.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1C832CD52420A9AD002956C4 /* GT3Captcha.bundle */; };
-		1C832CD82420A9AD002956C4 /* GT3Captcha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C832CD62420A9AD002956C4 /* GT3Captcha.framework */; };
 		7A0FD5A51EB37E51000A4518 /* CustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FD5981EB37E51000A4518 /* CustomButton.m */; };
 		7A0FD5A61EB37E51000A4518 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FD59A1EB37E51000A4518 /* LoginViewController.m */; };
 		7A0FD5A71EB37E51000A4518 /* NSAttributedString+AttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FD59C1EB37E51000A4518 /* NSAttributedString+AttributedString.m */; };
@@ -27,6 +26,7 @@
 		7A9BA10C1F289D5700FB2336 /* AsyncButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A9BA10B1F289D5700FB2336 /* AsyncButton.m */; };
 		BF14B6F01FA71E6700F2F8D3 /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF14B6EF1FA71E6700F2F8D3 /* Asset.xcassets */; };
 		BF14B6F21FA7216B00F2F8D3 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = BF14B6F11FA7216B00F2F8D3 /* background.png */; };
+		E9EAEA952BEB354700731ADC /* GT3Captcha.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EAEA942BEB354700731ADC /* GT3Captcha.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,7 +44,6 @@
 
 /* Begin PBXFileReference section */
 		1C832CD52420A9AD002956C4 /* GT3Captcha.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GT3Captcha.bundle; sourceTree = "<group>"; };
-		1C832CD62420A9AD002956C4 /* GT3Captcha.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GT3Captcha.framework; sourceTree = "<group>"; };
 		7A0FD5971EB37E51000A4518 /* CustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomButton.h; sourceTree = "<group>"; };
 		7A0FD5981EB37E51000A4518 /* CustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomButton.m; sourceTree = "<group>"; };
 		7A0FD5991EB37E51000A4518 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		7A9BA10B1F289D5700FB2336 /* AsyncButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncButton.m; sourceTree = "<group>"; };
 		BF14B6EF1FA71E6700F2F8D3 /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		BF14B6F11FA7216B00F2F8D3 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		E9EAEA942BEB354700731ADC /* GT3Captcha.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = GT3Captcha.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C832CD82420A9AD002956C4 /* GT3Captcha.framework in Frameworks */,
 				7A958B1D1E8D5A850030EBC3 /* WebKit.framework in Frameworks */,
+				E9EAEA952BEB354700731ADC /* GT3Captcha.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +95,8 @@
 		1C832CD42420A9AD002956C4 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				E9EAEA942BEB354700731ADC /* GT3Captcha.xcframework */,
 				1C832CD52420A9AD002956C4 /* GT3Captcha.bundle */,
-				1C832CD62420A9AD002956C4 /* GT3Captcha.framework */,
 			);
 			name = SDK;
 			path = ../SDK;
@@ -389,7 +389,10 @@
 				);
 				INFOPLIST_FILE = GT3Exmaple/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -412,7 +415,10 @@
 				);
 				INFOPLIST_FILE = GT3Exmaple/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"-ObjC",
